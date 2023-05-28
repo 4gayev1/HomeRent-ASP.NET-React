@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { Routes, Route } from "react-router-dom";
+import Blok from './Views/Blok';
+import Flat from './Views/Flat';
+import Contract from './Views/Contract';
+import Navbar from './Components/Navbar';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <Navbar/>
+      <Routes>
+        <Route path="/" element={<Blok />} />
+        <Route path="/flat" element={<Flat />} />
+        <Route path="/contract" element={<Contract />} />
+        
+      </Routes>
     </div>
   );
 }
